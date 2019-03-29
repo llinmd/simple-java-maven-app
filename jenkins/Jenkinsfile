@@ -14,11 +14,11 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn verify'
+                sh 'mvn test'
             }
             post {
                 always {
-                    junit 'target/surefire-reports/*.xml'
+                    //junit 'target/surefire-reports/*.xml'
                 }
                 failure {
         			mail to: 'lynn.lin@us-dde.net',
